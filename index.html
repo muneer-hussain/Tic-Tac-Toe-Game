@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <div id="profiles-wrapper">
+            <span id="player-1-profile">
+                <span id="player-1-profile-img"><img src="user.png" class="player-1-img"  alt="player-1-profile"></span><span id="players-name"></span>
+                <span id="player-1-name" >Player 1</span>
+            </span>
+
+            <span id="player-2-profile">
+                <span id="player-2-name" class="player-name">Player 2</span>
+                <span id="player-2-profile-img"><img id="player-2-img" src="user.png" alt="player-2-profile"></span>
+            </span>
+            <button id="add-names">Add Names Of Players</button>
+        </div>
+        <div id="game-board-wrapper">
+            <div id="game-board">
+                <div class="line"></div>
+                <div class="box"></div>
+                <div class= "box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pop up -->
+
+    <span id="pop-up-wrapper-win">
+        <span id="pop-up-win">
+        
+        </span>
+    </span>
+        
+
+
+
+    <span id="pop-up-wrapper">
+        <span id="pop-up">
+            <div id="players-names-popup">
+
+                <span id="pop-up-written">Add Names</span>
+        
+                <div id="pl-1-name">Player 1 : <input type="text" id="pl-1-n" spellcheck = false maxlength="9"></input></div>
+        
+                <div id="pl-2-name">Player 2 : <input type="text" id="pl-2-n" spellcheck = false maxlength="9"></input></div>
+        
+            </div>
+        
+        <button onclick ="addNameClosePopup()" id ="continue-btn"> Continue </button>
+                
+           
+        <span id="pop-up-wrapper">
+            <span id="pop-up">
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

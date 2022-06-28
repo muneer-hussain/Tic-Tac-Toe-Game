@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+#profiles-wrapper{
+    margin-top: 50px;
+    font-size: 23px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+}
+
+
+#profiles-wrapper img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#player-1-profile-img, #player-2-profile-img {
+    border: 5px solid white;
+    border-radius: 50%;
+
+}
+
+#game-wrapper {
+    display: block;
+}
+
+
+#player-2-profile-img{
+    position: absolute;
+    right: 50px;
+}
+
+#player-1-profile-img{
+    position: absolute;
+    left: 50px;
+
+}
+
+#game-board-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 8vw);
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    align-items: center;
+    margin-top: 16vw;
+    position: relative;
+
+
+}
+
+#game-board div {
+    border: 3px solid black;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    font-family:  cursive;
+}
+
+#game-board  .line {
+    border: none;
+    outline: none;
+}
+
+#player-1-name {
+    vertical-align: bottom;
+    margin-top: 35px;
+    position: absolute;
+    left: 190px;
+}
+
+#player-2-name {
+    position: absolute;
+    right: 200px;
+    margin-top: 35px;
+}
+
+/* pop up  */
+
+#pop-up-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#pop-up-wrapper #pop-up, #pop-up-wrapper-win #pop-up-win  {
+    position: fixed;
+    background-color: #fff;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 23vw;
+    height: fit-content;
+    box-shadow: 0px 0px 20px gray;
+    padding: 20px;
+    display: none;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+
+#pop-up-written {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+#score-heading {
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+    margin-top: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#player-1-score, #player-2-score {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 600;
+}
+#score {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#replay-btn, #continue-btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#add-names {
+    display: block;
+    position: fixed;
+    bottom: 15vw;
+    right: -40px;
+    transform: rotateZ(90deg);
+    margin: 0px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#pl-1-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#pl-2-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#players-names-popup input{
+    color: #000;
+    border: 2px solid black;
+    height: 30px;
+    width: 180px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.line {
+    top: 0px;
+    left: 0px;
+    width: 0vw;
+    max-height: 13px;
+    border-radius: 120px;
+    background-color: green;
+    position: absolute;
+    transition: width 1s ease;
+}
+
+.changeWidth {
+    width: 20vw;
+}
+
+@media (min-width : 1000px) and (max-width: 1250px) {
+    #game-board {
+        grid-template-columns: repeat(3, 7rem);
+        margin-top: 20vw;
+    }
+
+    .line {
+        top: 20px;
+    }
+
+    .changeWidth {
+        width: 17rem;
+    }
+    
+}
+
+@media (min-width : 910px) and (max-width: 1000px) {
+    #game-board {
+        grid-template-columns: repeat(3, 7rem);
+        margin-top: 24vw;
+    }
+
+    .changeWidth {
+        width: 17rem;
+    }
+    
+}
+
+@media (min-width : 800px) and (max-width: 910px) {
+    #game-board {
+        grid-template-columns: repeat(3, 7rem);
+        margin-top: 0vw;
+        bottom: 15vw;
+        position: absolute;
+    }
+
+    #pop-up-wrapper #pop-up, #pop-up-wrapper-win #pop-up-win  {
+        width: 20rem;
+    }
+
+    .changeWidth {
+        width: 17rem;
+    }
+    
+}
+
+@media (min-width : 700px) and (max-width: 799px) {
+    #game-board {
+        grid-template-columns: repeat(3, 7rem);
+        margin-top: 0vw;
+        bottom: 15vw;
+        position: absolute;
+    }
+
+    #pop-up-wrapper #pop-up, #pop-up-wrapper-win #pop-up-win  {
+        width: 20rem;
+    }
+
+    .changeWidth {
+        width: 17rem;
+    }
+    
+}
+@media (min-width : 500px) and (max-width: 799px) {
+    #game-board {
+        grid-template-columns: repeat(3, 6.2rem);
+        margin-top: 0vw;
+        bottom: 29vw;
+        position: absolute;
+    }
+
+    #game-board div {
+        height: 6rem;
+
+    }
+
+    #pop-up-wrapper #pop-up, #pop-up-wrapper-win #pop-up-win  {
+        width: 20rem;
+    }
+
+    .changeWidth {
+        width: 16rem;
+    }
+
+    #profiles-wrapper img{
+        height: 70px;
+        width: 70px;
+
+    }
+    #player-1-name {
+        left: 128px;
+        font-size: 18px;
+    }
+    #player-2-name {
+        font-size: 18px;
+        right: 128px;
+    }
+    #player-2-profile-img{
+        right: 20px;
+        vertical-align: middle;
+
+    }
+    
+    #player-1-profile-img{
+        left: 20px;
+    
+    }   
+}
+
+@media (min-width : 390px) and (max-width: 500px) {
+    #game-board {
+        grid-template-columns: repeat(3, 5.5rem);
+        margin-top: 0vw;
+        bottom: 14vh;
+        position: absolute;
+    }
+
+    #game-board div {
+        height: 5.6rem;
+    }
+
+    #pop-up-wrapper #pop-up, #pop-up-wrapper-win #pop-up-win  {
+        width: 16rem;
+        font-size: medium;
+    }
+
+    .changeWidth {
+        width: 15rem;
+    }
+
+    #profiles-wrapper img{
+        height: 60px;
+        width: 60px;
+
+    }
+    #player-1-name {
+        left: 85px;
+        font-size: 18px;
+        margin-top: 23px;
+        font-size: 15px;
+    }
+    #player-2-name {
+        font-size: 18px;
+        right: 85px;
+        margin-top: 23px;
+        font-size: 15px;
+    }
+    #player-2-profile-img{
+        right: 10px;
+        vertical-align: middle;
+
+    }
+    
+    #player-1-profile-img{
+        left: 10px;
+    
+    }
+    #add-names {
+        bottom: 35%;
+        padding: 7px;
+
+    }
+    #pop-up-written {
+        font-size: 23px;
+    }
+    #score-heading {
+        font-size: 25px;
+    }
+    #player-1-score, #player-2-score {
+        font-size: 19px;
+    }
+    
+}
+
+@media (min-width : 0px) and (max-width: 390px) {
+    #game-board {
+        grid-template-columns: repeat(3, 4.7rem);
+        margin-top: 0vw;
+        bottom: 12vh;
+        position: absolute;
+    }
+
+    #game-board div {
+        height: 4.7rem;
+    }
+
+    #pop-up-wrapper-win #pop-up-win  {
+        width: 65vw;
+        font-size: medium;
+    }
+
+    .changeWidth {
+        width: 13rem;
+    }
+
+    #profiles-wrapper img{
+        height: 40px;
+        width: 40px;
+
+    }
+    #player-1-name {
+        left: 66px;
+        font-size: 18px;
+        margin-top: -12px;
+        font-size: 15px;
+    }
+    #player-2-name {
+        font-size: 18px;
+        right: 66px;
+        margin-top: -12px;
+        font-size: 15px;
+    }
+    #player-2-profile-img{
+        right: 10px;
+        vertical-align: middle;
+        top: 25px;
+
+    }
+    
+    #player-1-profile-img{
+        left: 10px;
+        top: 25px;
+
+    }
+    #add-names {
+        display: none;
+    }
+    #pop-up-written {
+        font-size: 23px;
+    }
+    #score-heading {
+        font-size: 25px;
+    }
+    #player-1-score, #player-2-score {
+        font-size: 19px;
+    }
+    .line {
+        max-height: 10px;
+    }
+    
+}
